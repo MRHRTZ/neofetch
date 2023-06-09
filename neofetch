@@ -1325,7 +1325,7 @@ get_gpu() {
         ;;
 
         "Windows")
-            gpu="$(wmic path Win32_VideoController get caption)"
+            gpu="$(wmic path Win32_VideoController get caption | sed -n 2p)"
             gpu="${gpu//Caption}"
         ;;
 
